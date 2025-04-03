@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEFI Universal Periodic Elemental Resonance Chart</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin: 1rem 0;
+    }
+    .chart-container {
+      width: 95vw;
+      max-width: 1200px;
+      margin: auto;
+      overflow-x: auto;
+    }
+    svg {
+      width: 100%;
+      height: auto;
+      pointer-events: none;
+    }
+    .download-button {
+      margin: 1rem;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .download-button:hover {
+      background-color: #45a049;
+    }
+    .legend {
+      margin-top: 1rem;
+      text-align: left;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1rem;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+    }
+    .legend h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .legend ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .legend li {
+      padding: 0.3rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>MEFI Universal Periodic Elemental Resonance Chart</h1>
+  <button class="download-button" onclick="downloadChart()">Download Chart</button>
+
+  <div class="chart-container">
+    <iframe src="chart.html" width="100%" height="800px" frameborder="0"></iframe>
+  </div>
+
+  <div class="legend">
+    <h2>Legend – Phase Groups & Predicted Element Zones</h2>
+    <ul>
+      <li><strong>Primora</strong> – Low frequency foundational elements</li>
+      <li><strong>Structura</strong> – Stability and core matter anchors</li>
+      <li><strong>Harmonia</strong> – Elements resonating with universal coherence</li>
+      <li><strong>Tenebria</strong> – High frequency boundary phase elements (Delta Q edge types)</li>
+      <li><strong>Empty Circles</strong> – Reserved resonance zones predicted by MEFI where new elements are expected to emerge in those frequency bands</li>
+    </ul>
+  </div>
+
+  <script>
+    function downloadChart() {
+      const link = document.createElement('a');
+      link.href = 'chart.html';
+      link.download = 'MEFI_Resonance_Chart.html';
+      link.click();
+    }
+  </script>
+</body>
+</html>
