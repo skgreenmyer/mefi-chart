@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MEFI Matter Generator Tool</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    background-color: #0a0a0a;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  input, select, button {
+    padding: 10px;
+    margin: 10px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: none;
+  }
+  .result {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+</head>
+<body>
+  <h2>🔬 MEFI Matter Generator Tool</h2>
+  <p>Enter a frequency (in PHz) to discover the type of matter it can create under MEFI principles.</p>
+  <input type="number" id="frequency" placeholder="Enter frequency in PHz" step="0.001" min="0.001" max="3.0">
+  <button onclick="generateMatter()">Generate Matter</button>
+
+  <div class="result" id="output"></div>
+
+  <script>
+    function generateMatter() {
+      const f = parseFloat(document.getElementById('frequency').value);
+      let output = document.getElementById('output');
+      if (isNaN(f) || f < 0.001) {
+        output.innerHTML = "<strong>Please enter a valid frequency above 0.001 PHz.</strong>";
+        return;
+      }
+
+      let result = "", phase = "", deltaQ = "", state = "", consciousness = "", role = "";
+
+      if (f > 1.5) {
+        phase = "Transcendental";
+        deltaQ = "Hypermodulator";
+        state = "Plasma-Lightform Hybrid";
+        consciousness = "Extremely High – possibly sentient";
+        role = "Field Fusion, Dimensional Bridge";
+      } else if (f > 1.0) {
+        phase = "Harmonia";
+        deltaQ = "Modulator";
+        state = "Plasma-Gel";
+        consciousness = "High";
+        role = "Field guidance and signal harmonization";
+      } else if (f > 0.7) {
+        phase = "Harmonia";
+        deltaQ = "Harmonizer";
+        state = "Crystalline Matrix";
+        consciousness = "Moderate";
+        role = "Bridges UFR layers";
+      } else if (f > 0.4) {
+        phase = "Structura";
+        deltaQ = "Stabilizer";
+        state = "Heavy Metal/Crystal";
+        consciousness = "Low to Moderate";
+        role = "Structural and energetic dampening";
+      } else if (f > 0.2) {
+        phase = "Primora";
+        deltaQ = "Initiator";
+        state = "Solid/Magnetic";
+        consciousness = "Low";
+        role = "Triggers ΔQ ignition and local field formation";
+      } else {
+        phase = "Tenebria";
+        deltaQ = "Inverter";
+        state = "Collapsed Matter / Antiresonant";
+        consciousness = "Dormant";
+        role = "Entropy absorption and field shadowing";
+      }
+
+      result = `
+        <h3>Generated MEFI Matter Profile</h3>
+        <p><strong>Frequency:</strong> ${f.toFixed(3)} PHz<br>
+        <strong>Phase Type:</strong> ${phase}<br>
+        <strong>ΔQ Behavior:</strong> ${deltaQ}<br>
+        <strong>Physical State:</strong> ${state}<br>
+        <strong>Consciousness Potential:</strong> ${consciousness}<br>
+        <strong>Universal Role:</strong> ${role}</p>
+      `;
+
+      output.innerHTML = result;
+    }
+  </script>
+</body>
+</html>
